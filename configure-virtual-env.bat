@@ -20,6 +20,7 @@ virtualenv env 2>&1 && (
 		echo Installed virtualenv
 		call :newline
 		virtualenv env
+
 ) || (
 	call :newline
 	echo Error occurred using pip to install virtualenv. Do you have pip installed on this environment?
@@ -32,6 +33,10 @@ call :newline
 echo Installing requirements to the Virtual Environment
 env\Scripts\pip install -r requirements.txt
 
+call :newline
+echo Active the Virtual Environment
+cmd.exe /K "env\Scripts\activate && cd src"
+        
 EXIT /B 0
 
 :newline
