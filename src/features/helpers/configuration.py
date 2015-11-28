@@ -14,7 +14,7 @@ def read_browser(configFilePath):
         }
     configParser = configparser.RawConfigParser()
     configParser.read(configFilePath)
-    return browsers[configParser["selenium"]["driver"]]
+    return browsers[configParser.get("selenium", "driver")]
    
 def read_project_root(currentFilePath):
     return os.path.dirname(os.path.dirname(currentFilePath))
