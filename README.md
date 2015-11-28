@@ -67,6 +67,11 @@ When the environment has been activated you will see the (env) label at the prom
 
 	(env) C:\git\UglyToad.Python.UITesting>
 
+## Use with CI ##
+
+The intention is for this project to be used for continuous integration. 
+I have included an example Jenkins configuration ~\tools\config.xml
+
 
 [link0]:http://pythonhosted.org/behave/index.html
 [link1]:https://www.python.org/downloads/
