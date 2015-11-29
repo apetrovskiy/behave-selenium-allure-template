@@ -7,11 +7,18 @@ from selenium.webdriver.common.keys import Keys
 def step_impl(context):
     pass
 
-@when("I am on the homepage")
-def step_impl(context):
-    context.browser.get(configuration.get_setting("tests", "url"))
-
 @then('I should see the English option')
 def step_impl(context):
     link = context.browser.find_element_by_link_text("English")
     assert True is True
+ 
+@when("I search cats")
+def step_impl(context):
+    search = context.browser.find_element_by_id("searchInput")
+    search.send_keys("cats")
+    search.submit()
+    
+@then("I should go to the cats page")
+def step_impl(context):
+    title = context.browser.find_element_by_tag_name("h1")
+    assert "Cat" in title.text 
