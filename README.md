@@ -29,6 +29,8 @@ Additionally you must have Python 3.5 installed and set-up on the Path:
 
 3. Once run you should be able to type ```behave``` and it will run the single sample test. This should open Firefox and navigate to Wikipedia. 
 
+## Configuration ##
+
 ### Changing the browser ###
 
 Depending on the browser you have installed you can change the browser the test uses to run by changing the config in ```~\src\Config.ini```:
@@ -41,6 +43,36 @@ The possible values are currently:
 + Firefox
 + Chrome
 + Internet Explorer
+
+### Changing cookie clearing behaviour ###
+
+The project is set up to clear cookies from the browser session based on the setting in Config.ini
+	
+	[selenium]
+	driver = Chrome
+	clear_cookies = lifetime
+
+The possible values are:
+
++ step - clears cookies after each individual step is run
++ feature - clears cookies after all scenarios in a feature file are run
++ lifetime - clears cookies only after an entire test run finishes
++ scenario - clears cookies after each full Given/When/Then scenario
+
+### Using custom configuration ###
+
+You can add your own settings to Config.ini and easily access them from your step definitions. For example, in Config.ini:
+
+	[tests]
+	url = http://wikipedia.org
+
+Then in steps/wikipedia.py:
+
+	from helpers import configuration
+	
+	@when("I am on the homepage")
+	def step_impl(context):
+    		context.browser.get(configuration.get_setting("tests", "url"))
 
 ## Known Problems ##
 
