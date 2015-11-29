@@ -74,6 +74,20 @@ Then in steps/wikipedia.py:
 	def step_impl(context):
     		context.browser.get(configuration.get_setting("tests", "url"))
 
+## Important Information ##
+
+The driver in this template is created once per run. While it can be set to clear cookies after any tye of step this means the session will persist for all tests.
+If your application uses the session you will need to start the driver on a per scenario basis. To achieve this you can move the code (in environment.py):
+
+    browsertype = configuration.get_browser()
+    context.browser = driver.switch_browser(browsertype)
+	
+Into the ```def before_scenario(context, scenario): ``` function.
+
+You will also need to move ```context.browser.quit()``` to the ```after_scenario``` function.
+
+Doing this will make performance considerably slower.
+
 ## Known Problems ##
 
 ### First Run ###
