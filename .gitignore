@@ -5,6 +5,7 @@ __pycache__/
 
 .vscode/
 src/results/
+failures/
 
 # C extensions
 *.so
