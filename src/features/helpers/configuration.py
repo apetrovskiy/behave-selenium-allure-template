@@ -36,4 +36,4 @@ def is_linux():
     return platform.system().lower() == "linux"
     
 def get_chromedriver():
-    return "chromedriver.exe" if is_windows else "chromedriver64" if is_64bit() else "chromedriver"
+    return "chromedriver.exe" if is_windows() else "chromedriver64" if is_64bit() else "chromedriver"
