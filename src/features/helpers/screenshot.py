@@ -1,7 +1,8 @@
-from .browsers import Browsers 
+from .browsers import Browsers
 from helpers import configuration
 import os
 from selenium import webdriver
+
 
 def capture_failure(context, scenario):
     originalpath = os.getcwd()

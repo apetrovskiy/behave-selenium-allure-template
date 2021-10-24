@@ -21,7 +21,7 @@ jobs:
         # pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pipenv run pylint `ls -R|grep .py$|xargs`
+        pipenv run pylint src
     - name: Test
       run: |
         pipenv run behave
