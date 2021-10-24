@@ -15,9 +15,9 @@ class Browsers(Enum):
     Returns:
         [type]: [description]
     """
-    chrome = 1
-    firefox = 2
-    internetexplorer = 3
+    CHROME = 1
+    FIREFOX = 2
+    INTERNET_EXPLORER = 3
     phantom = 4
     opera = 5
     edge = 6
@@ -34,12 +34,12 @@ class Browsers(Enum):
             Browsers: enumeration
         """
         return {
-            "Chrome": self.chrome,
-            "Google Chrome": self.chrome,
-            "Firefox": self.firefox,
-            "FireFox": self.firefox,
-            "Internet Explorer": self.internetexplorer,
-            "IE": self.internetexplorer,
+            "Chrome": self.CHROME,
+            "Google Chrome": self.CHROME,
+            "Firefox": self.FIREFOX,
+            "FireFox": self.FIREFOX,
+            "Internet Explorer": self.INTERNET_EXPLORER,
+            "IE": self.INTERNET_EXPLORER,
             "Phantom": self.phantom,
             "Edge": self.edge,
             "Chromium": self.chromium,

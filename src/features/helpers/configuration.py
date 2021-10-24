@@ -21,19 +21,19 @@ def is_64bit():
     return sys.maxsize > 2**32
 
 
-def getConfig():
+def get_config():
     """[summary]
 
     Returns:
         [type]: [description]
     """
-    configFilePath = os.path.join(projectRoot, "src", "config.ini")
-    configParser = configparser.RawConfigParser()
-    configParser.read(configFilePath)
-    return configParser
+    config_file_path = os.path.join(projectRoot, "src", "config.ini")
+    config_parser = configparser.RawConfigParser()
+    config_parser.read(config_file_path)
+    return config_parser
 
 
-config = getConfig()
+config = get_config()
 
 
 def get_setting(parent, key):

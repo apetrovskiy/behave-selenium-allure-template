@@ -24,11 +24,11 @@ def switch_browser(browser: Browsers) -> str:
     Returns:
         str: [description]
     """
-    if browser == Browsers.chrome:
+    if browser == Browsers.CHROME:
         return webdriver.Chrome(ChromeDriverManager().install())
     elif browser == Browsers.chromium:
         return webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
-    elif browser == Browsers.firefox:
+    elif browser == Browsers.FIREFOX:
         return webdriver.Firefox(GeckoDriverManager.install())
     elif browser == Browsers.edge:
         return webdriver.Edge(EdgeChromiumDriverManager.install())
