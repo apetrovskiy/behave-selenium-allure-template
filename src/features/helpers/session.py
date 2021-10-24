@@ -1,5 +1,4 @@
 from enum import Enum
-from selenium import webdriver
 from src.features.helpers import configuration
 
 

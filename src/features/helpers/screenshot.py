@@ -1,5 +1,4 @@
 import os
-from src.features.helpers.browsers import Browsers
 from src.features.helpers import configuration
 
 

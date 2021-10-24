@@ -1,7 +1,5 @@
 from behave import given, step, then, when
 from behave.runner import Context
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from src.features.helpers import configuration
 
 
