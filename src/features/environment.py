@@ -28,7 +28,7 @@ def after_step(context: Context, step: step):
         context (Context): [description]
         step (step): [description]
     """
-    session.clear_cookies_if_required(session.Stage.step, context)
+    session.clear_cookies_if_required(session.Stage.STEP, context)
     # Runs after each step.
     if step.status == "failed":
         print("step failed")
@@ -52,7 +52,7 @@ def after_scenario(context: Context, scenario: Scenario):
         context (Context): [description]
         scenario (Scenario): [description]
     """
-    session.clear_cookies_if_required(session.Stage.scenario, context)
+    session.clear_cookies_if_required(session.Stage.SCENARIO, context)
     # Runs after each scenario
     if scenario.status == "failed":
         screenshot.capture_failure(context, scenario)
@@ -76,7 +76,7 @@ def after_feature(context: Context, feature: Feature):
         context (Context): [description]
         feature (Feature): [description]
     """
-    session.clear_cookies_if_required(session.Stage.feature, context)
+    session.clear_cookies_if_required(session.Stage.FEATURE, context)
     # Runs after each feature
     pass
 
@@ -97,6 +97,6 @@ def after_all(context: Context):
     Args:
         context (Context): [description]
     """
-    session.clear_cookies_if_required(session.Stage.lifetime, context)
+    session.clear_cookies_if_required(session.Stage.LIFETIME, context)
     # Very last thing to run.
     context.browser.quit()

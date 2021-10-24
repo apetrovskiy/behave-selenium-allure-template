@@ -18,10 +18,10 @@ class Browsers(Enum):
     CHROME = 1
     FIREFOX = 2
     INTERNET_EXPLORER = 3
-    phantom = 4
-    opera = 5
-    edge = 6
-    chromium = 7
+    PHANTOM = 4
+    OPERA = 5
+    EDGE = 6
+    CHROMIUM = 7
 
     @classmethod
     def get_browser(self, b):
@@ -40,8 +40,8 @@ class Browsers(Enum):
             "FireFox": self.FIREFOX,
             "Internet Explorer": self.INTERNET_EXPLORER,
             "IE": self.INTERNET_EXPLORER,
-            "Phantom": self.phantom,
-            "Edge": self.edge,
-            "Chromium": self.chromium,
-            "Opera": self.opera
+            "Phantom": self.PHANTOM,
+            "Edge": self.EDGE,
+            "Chromium": self.CHROMIUM,
+            "Opera": self.OPERA
         }[b]

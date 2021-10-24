@@ -10,10 +10,10 @@ class Stage(Enum):
     Args:
         Enum ([type]): [description]
     """
-    step = 1
-    feature = 2
-    scenario = 3
-    lifetime = 4
+    STEP = 1
+    FEATURE = 2
+    SCENARIO = 3
+    LIFETIME = 4
 
 
 desiredclearance = configuration.get_setting("selenium", "clear_cookies")
@@ -26,6 +26,6 @@ def clear_cookies_if_required(entity_type, context):
         entity_type ([type]): [description]
         context ([type]): [description]
     """
-    if entity_type == Stage[desiredclearance]:
+    if entity_type == Stage[desiredclearance.upper()]:
         context.browser.delete_all_cookies()
         print("deleting cookies")

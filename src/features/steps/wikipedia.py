@@ -6,7 +6,7 @@ from src.features.helpers import configuration
 
 
 @given("I am not logged in")
-def step_impl(context: Context):
+def step_not_logged_in(context: Context):
     """[summary]
 
     Args:
@@ -16,7 +16,7 @@ def step_impl(context: Context):
 
 
 @then('I should see the English option')
-def step_impl(context: Context):
+def step_should_see_option(context: Context):
     """[summary]
 
     Args:
@@ -27,7 +27,7 @@ def step_impl(context: Context):
 
 
 @when("I search cats")
-def step_impl(context: Context):
+def step_search_cats(context: Context):
     """[summary]
 
     Args:
