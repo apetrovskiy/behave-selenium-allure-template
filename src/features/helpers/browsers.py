@@ -2,6 +2,14 @@ from enum import Enum
 
 
 class Browsers(Enum):
+    """List of supported browsers
+
+    Args:
+        Enum ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
     chrome = 1
     firefox = 2
     internetexplorer = 3
@@ -12,6 +20,14 @@ class Browsers(Enum):
 
     @classmethod
     def get_browser(self, b):
+        """Returns a Browsers value by input string
+
+        Args:
+            b (string): textual name of browser
+
+        Returns:
+            Browsers: enumeration
+        """
         return {
             "Chrome": self.chrome,
             "Google Chrome": self.chrome,
