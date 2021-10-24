@@ -1,6 +1,6 @@
 from behave import given, when
 from behave.runner import Context
-from helpers import configuration
+from src.features.helpers import configuration
 
 
 @given("I am on the homepage")

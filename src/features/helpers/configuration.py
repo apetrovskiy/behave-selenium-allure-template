@@ -1,7 +1,7 @@
 import configparser
 import os
 import sys
-from .browsers import Browsers
+from src.features.helpers.browsers import Browsers
 
 projectRoot = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.dirname(__file__))))

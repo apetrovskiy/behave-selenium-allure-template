@@ -1,8 +1,8 @@
 from behave import given, step, then, when
 from behave.runner import Context
 from selenium import webdriver
-from helpers import configuration
 from selenium.webdriver.common.keys import Keys
+from src.features.helpers import configuration
 
 
 @given("I am not logged in")

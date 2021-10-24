@@ -2,10 +2,10 @@ from behave import step
 from behave.model import Feature, Scenario
 from behave.runner import Context
 from src.features.helpers.browsers import Browsers
-from helpers import configuration
-from helpers import driver
-from helpers import screenshot
-from helpers import session
+from src.features.helpers import configuration
+from src.features.helpers import driver
+from src.features.helpers import screenshot
+from src.features.helpers import session
 
 
 def before_step(context: Context, step: step):

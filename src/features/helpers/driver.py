@@ -6,8 +6,8 @@ from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 # from webdriver_manager.microsoft import IeDriverManager
 from webdriver_manager.opera import OperaDriverManager
-from .browsers import Browsers
-from helpers import configuration
+from src.features.helpers.browsers import Browsers
+from src.features.helpers import configuration
 
 
 def switch_browser(browser: Browsers) -> str:

@@ -1,6 +1,6 @@
 import os
-from .browsers import Browsers
-from helpers import configuration
+from src.features.helpers.browsers import Browsers
+from src.features.helpers import configuration
 
 
 def capture_failure(context, scenario):

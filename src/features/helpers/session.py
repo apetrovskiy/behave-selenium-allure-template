@@ -1,6 +1,6 @@
-from helpers import configuration
-from selenium import webdriver
 from enum import Enum
+from selenium import webdriver
+from src.features.helpers import configuration
 
 
 class Stage(Enum):
