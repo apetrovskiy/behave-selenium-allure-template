@@ -10,20 +10,6 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from webdriver_manager.opera import OperaDriverManager
 
 
-# def get_chrome():
-#     chromedriver = configuration.read_chromedriver_location()
-#     os.environ["webdriver.chrome.driver"] = chromedriver
-#     print("webdriver.Chrome(chromedriver)")
-#     print(webdriver.Chrome(chromedriver))
-#     return webdriver.Chrome(chromedriver)
-
-
-# def get_ie():
-#     iedriver = configuration.read_internetexplorer_location()
-#     os.environ["webdriver.ie.driver"] = iedriver
-#     return webdriver.Ie(iedriver)
-
-
 def switch_browser(browser: Browsers) -> str:
     return {
         Browsers.chrome: webdriver.Chrome(ChromeDriverManager().install()),
