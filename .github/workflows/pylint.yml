@@ -21,6 +21,7 @@ jobs:
         # pip install pylint
     - name: Analysing the code with pylint
       run: |
+        pipenv install --dev pylint
         pipenv run pylint src
     - name: Test
       run: |
