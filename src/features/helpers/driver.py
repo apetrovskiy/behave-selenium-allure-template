@@ -1,3 +1,8 @@
+"""[summary]
+
+    Returns:
+        [type]: [description]
+    """
 import os
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager

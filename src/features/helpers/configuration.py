@@ -1,3 +1,8 @@
+"""[summary]
+
+    Returns:
+        [type]: [description]
+    """
 import configparser
 import os
 import sys

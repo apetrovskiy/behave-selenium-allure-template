@@ -1,3 +1,8 @@
+"""[summary]
+
+    Returns:
+        [type]: [description]
+    """
 from enum import Enum
 
 
