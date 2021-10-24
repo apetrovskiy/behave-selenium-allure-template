@@ -31,6 +31,7 @@ def get_browser():
 
 
 def read_chromedriver_location():
+    print("read_chromedriver_location")
     print(os.path.join(projectRoot, "tools", get_chromedriver()))
     return os.path.join(projectRoot, "tools", get_chromedriver())
 

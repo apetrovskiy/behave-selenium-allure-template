@@ -8,6 +8,7 @@ selenium = "*"
 behave = "*"
 configparser = "*"
 autopep8 = "*"
+webdriver-manager = "*"
 
 [dev-packages]
 pycodestyle = "*"
