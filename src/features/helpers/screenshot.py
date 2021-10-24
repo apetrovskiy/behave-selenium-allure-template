@@ -3,6 +3,12 @@ from src.features.helpers import configuration
 
 
 def capture_failure(context, scenario):
+    """[summary]
+
+    Args:
+        context ([type]): [description]
+        scenario ([type]): [description]
+    """
     originalpath = os.getcwd()
     path = os.path.join(configuration.projectRoot, "failures")
     if not os.path.exists(path):

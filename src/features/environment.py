@@ -9,11 +9,23 @@ from src.features.helpers import session
 
 
 def before_step(context: Context, step: step):
+    """[summary]
+
+    Args:
+        context (Context): [description]
+        step (step): [description]
+    """
     # Runs before each Given, When and Then step.
     pass
 
 
 def after_step(context: Context, step: step):
+    """[summary]
+
+    Args:
+        context (Context): [description]
+        step (step): [description]
+    """
     session.clear_cookies_if_required(session.Stage.step, context)
     # Runs after each step.
     if step.status == "failed":
@@ -21,11 +33,23 @@ def after_step(context: Context, step: step):
 
 
 def before_scenario(context: Context, scenario: Scenario):
+    """[summary]
+
+    Args:
+        context (Context): [description]
+        scenario (Scenario): [description]
+    """
     # Runs before each full scenario (complete Given, When, Then definition)
     pass
 
 
 def after_scenario(context: Context, scenario: Scenario):
+    """[summary]
+
+    Args:
+        context (Context): [description]
+        scenario (Scenario): [description]
+    """
     session.clear_cookies_if_required(session.Stage.scenario, context)
     # Runs after each scenario
     if scenario.status == "failed":
@@ -33,22 +57,44 @@ def after_scenario(context: Context, scenario: Scenario):
 
 
 def before_feature(context: Context, feature: Feature):
+    """[summary]
+
+    Args:
+        context (Context): [description]
+        feature (Feature): [description]
+    """
     # Runs before each feature file
     pass
 
 
 def after_feature(context: Context, feature: Feature):
+    """[summary]
+
+    Args:
+        context (Context): [description]
+        feature (Feature): [description]
+    """
     session.clear_cookies_if_required(session.Stage.feature, context)
     # Runs after each feature
     pass
 
 
 def before_all(context: Context):
+    """[summary]
+
+    Args:
+        context (Context): [description]
+    """
     browsertype: Browsers = configuration.get_browser()
     context.browser = driver.switch_browser(browsertype)
 
 
 def after_all(context: Context):
+    """[summary]
+
+    Args:
+        context (Context): [description]
+    """
     session.clear_cookies_if_required(session.Stage.lifetime, context)
     # Very last thing to run.
     context.browser.quit()

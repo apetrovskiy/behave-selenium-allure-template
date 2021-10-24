@@ -11,6 +11,14 @@ from src.features.helpers import configuration
 
 
 def switch_browser(browser: Browsers) -> str:
+    """[summary]
+
+    Args:
+        browser (Browsers): [description]
+
+    Returns:
+        str: [description]
+    """
     if browser == Browsers.chrome:
         return webdriver.Chrome(ChromeDriverManager().install())
     elif browser == Browsers.chromium:
