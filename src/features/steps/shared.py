@@ -1,6 +1,5 @@
 from behave import given, when
 from behave.runner import Context
-from selenium import webdriver
 from helpers import configuration
 
 

@@ -46,8 +46,6 @@ def after_feature(context: Context, feature: Feature):
 def before_all(context: Context):
     browsertype: Browsers = configuration.get_browser()
     context.browser = driver.switch_browser(browsertype)
-    print(context.browser)
-    print(context)
 
 
 def after_all(context: Context):
