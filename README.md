@@ -4,7 +4,7 @@ This is a project template for using BDD style tests to test a web application.
 
 The browser is driven by Selenium and performs BDD style steps defined using the [behave library][link0] for Python.
 
-This template is designed to work with Python 3.5 on Windows 7+.
+This template is developedd with Python 3.9 on Mac OSX 12.
 
 
 
@@ -18,10 +18,10 @@ Have installed at least one of:
 + Firefox
 + Internet Explorer 
 
-Additionally you must have Python 3.5 installed and set-up on the Path:
+Additionally you must have Python 3.9 installed and set-up on the Path:
 
-+ Install [Python 3.5 or above][link1] for Windows. 
-+ Make sure Python is set in the Path (```Control Panel > System > Advanced System Settings >  Environment Variables``` and add ```C:\root\to\Python[version]\Scripts\```)
++ Install [Python 3.9 or above][link1]. 
++ Make sure Python is set in the Path
 
 ### Steps ###
 
