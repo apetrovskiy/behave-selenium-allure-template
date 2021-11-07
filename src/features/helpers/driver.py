@@ -1,21 +1,40 @@
-from .browsers import Browsers 
-from helpers import configuration
+"""[summary]
+
+    Returns:
+        [type]: [description]
+    """
 import os
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.utils import ChromeType
+from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+# from webdriver_manager.microsoft import IeDriverManager
+from webdriver_manager.opera import OperaDriverManager
+from src.features.helpers.browsers import Browsers
+from src.features.helpers import configuration
 
-def get_chrome():
-    chromedriver = configuration.read_chromedriver_location()
-    os.environ["webdriver.chrome.driver"] = chromedriver
-    return webdriver.Chrome(chromedriver)
-    
-def get_ie():
-    iedriver = configuration.read_internetexplorer_location()
-    os.environ["webdriver.ie.driver"] = iedriver
-    return webdriver.Ie(iedriver)
-    
-def switch_browser(browser):
-    return {
-        Browsers.chrome : get_chrome,
-        Browsers.internetexplorer : get_ie
-    }.get(browser, lambda: webdriver.Firefox())()
-   
+
+def switch_browser(browser: Browsers) -> str:
+    """[summary]
+
+    Args:
+        browser (Browsers): [description]
+
+    Returns:
+        str: [description]
+    """
+    if browser == Browsers.CHROME:
+        return webdriver.Chrome(ChromeDriverManager().install())
+    elif browser == Browsers.CHROMIUM:
+        return webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+    elif browser == Browsers.FIREFOX:
+        return webdriver.Firefox(GeckoDriverManager.install())
+    elif browser == Browsers.EDGE:
+        return webdriver.Edge(EdgeChromiumDriverManager.install())
+    # elif browser == Browsers.internetexplorer:
+    #     return webdriver.InternetExplorer(IeDriverManager.install())
+    elif browser == Browsers.OPERA:
+        return webdriver.Opera(OperaDriverManager.install())
+    else:
+        return webdriver.Firefox(GeckoDriverManager.install())

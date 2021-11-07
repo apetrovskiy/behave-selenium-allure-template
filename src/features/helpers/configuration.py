@@ -1,55 +1,58 @@
+"""[summary]
+
+    Returns:
+        [type]: [description]
+    """
 import configparser
 import os
 import sys
-import platform
-from .browsers import Browsers
+from src.features.helpers.browsers import Browsers
 
 projectRoot = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.dirname(__file__))))
 
 
 def is_64bit():
+    """[summary]
+
+    Returns:
+        [type]: [description]
+    """
     return sys.maxsize > 2**32
 
 
-def getConfig():
-    configFilePath = os.path.join(projectRoot, "src", "config.ini")
-    configParser = configparser.RawConfigParser()
-    configParser.read(configFilePath)
-    return configParser
+def get_config():
+    """[summary]
+
+    Returns:
+        [type]: [description]
+    """
+    config_file_path = os.path.join(projectRoot, "src", "config.ini")
+    config_parser = configparser.RawConfigParser()
+    config_parser.read(config_file_path)
+    return config_parser
 
 
-config = getConfig()
+config = get_config()
 
 
 def get_setting(parent, key):
+    """[summary]
+
+    Args:
+        parent ([type]): [description]
+        key ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
     return config.get(parent, key)
 
 
 def get_browser():
+    """[summary]
+
+    Returns:
+        [type]: [description]
+    """
     return Browsers.get_browser(get_setting("selenium", "driver"))
-
-
-def read_chromedriver_location():
-    print(os.path.join(projectRoot, "tools", get_chromedriver()))
-    return os.path.join(projectRoot, "tools", get_chromedriver())
-
-
-def read_internetexplorer_location():
-    return os.path.join(projectRoot, "tools", "IEDriverServer.exe")
-
-
-def is_windows():
-    return platform.system().lower() == "windows"
-
-
-def is_linux():
-    return platform.system().lower() == "linux"
-
-
-def get_chromedriver_file_name():
-    return "chromedriver.exe" if is_windows() else "chromedriver"
-
-
-def get_chromedriver():
-    return f"{platform.system().lower()}/{platform.machine()}/{get_chromedriver_file_name()}"
