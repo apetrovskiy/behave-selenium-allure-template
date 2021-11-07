@@ -1,6 +1,8 @@
 name: Pylint
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -20,9 +22,16 @@ jobs:
         pipenv sync
         # pip install pylint
     - name: Analysing the code with pylint
+      if: alwais()
       run: |
         pipenv install --dev pylint
         pipenv run pylint src
+        pylint `ls -R|grep .py$|xargs`
+    - name: Lint with flake8
+      if: alwais()
+      run: |
+        pipenv run flake8 ./src
     - name: Test
+      if: alwais()
       run: |
         pipenv run behave
