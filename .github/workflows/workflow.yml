@@ -23,7 +23,7 @@ jobs:
       - name: Analysing the code with pylint
         if: always()
         run: |
-          pipenv install --dev pylint
+          # pipenv install --dev pylint
           pipenv run pylint src
           pylint `ls -R|grep .py$|xargs`
       - name: Lint with flake8
