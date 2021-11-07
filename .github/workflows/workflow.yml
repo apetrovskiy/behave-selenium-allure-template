@@ -19,11 +19,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install pipenv
           pipenv sync
-          # pip install pylint
       - name: Analysing the code with pylint
         if: always()
         run: |
-          # pipenv install --dev pylint
           pipenv run pylint src
           pylint `ls -R|grep .py$|xargs`
       - name: Lint with flake8
@@ -38,10 +36,16 @@ jobs:
         if: always()
         run: |
           pipenv run behave -f allure_behave.formatter:AllureFormatter -o allure-results ./src/features --no-capture --no-capture-stderr
-      - uses: ./.github/actions/allure-upload
+      # - uses: ./.github/actions/allure-upload
+      #   if: always()
+      #   with:
+      #     folder-name: allure-results   
+      - name: Archive Allure results
         if: always()
+        uses: actions/upload-artifact@v2
         with:
-          folder-name: allure-results   
+          name: allure-results
+          path: allure-results
 
   allure:
     runs-on: ubuntu-latest
@@ -72,7 +76,7 @@ jobs:
           gh_pages: gh-pages
           allure_report: allure-report
           allure_history: allure-history
-          keep_reports: 50
+          keep_reports: 20
 
       - name: Deploy report to Github Pages
         if: always()
