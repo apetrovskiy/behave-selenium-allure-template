@@ -37,19 +37,20 @@ jobs:
       if: always()
       run: |
         pipenv run behave -f allure_behave.formatter:AllureFormatter -o allure-results ./src/features --no-capture --no-capture-stderr
-    # - uses: ./.github/actions/allure-upload
-    #   if: always()
-    #   with:
-    #     folder-name: allure-results
+    - uses: ./.github/actions/allure-upload
+      if: always()
+      with:
+        folder-name: allure-results
+
     - name: Look at Allure
       if: always()
       uses: ./.github/actions/allure-show
-    - name: Archive Allure results
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: allure-results
-        path: allure-results
+    # - name: Archive Allure results
+    #   if: always()
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: allure-results
+    #     path: allure-results
 
   allure:
     runs-on: ubuntu-latest

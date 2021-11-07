@@ -5,6 +5,7 @@ runs:
   steps:
     - run: |
         pwd
+        ls
         ls allure-results
         # allure --version
       shell: bash
