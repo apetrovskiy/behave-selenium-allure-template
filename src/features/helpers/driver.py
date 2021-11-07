@@ -27,9 +27,11 @@ def switch_browser(browser: Browsers) -> str:
     if browser == Browsers.CHROME:
         return webdriver.Chrome(ChromeDriverManager().install())
     elif browser == Browsers.CHROMIUM:
-        return webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+        return webdriver.Chrome(
+            ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
     elif browser == Browsers.FIREFOX:
-        return webdriver.Firefox(executable_path=GeckoDriverManager().install())
+        return webdriver.Firefox(
+            executable_path=GeckoDriverManager().install())
     elif browser == Browsers.EDGE:
         # return webdriver.Edge(EdgeChromiumDriverManager.install())
         return webdriver.Edge(EdgeChromiumDriverManager().install())
@@ -38,4 +40,5 @@ def switch_browser(browser: Browsers) -> str:
     elif browser == Browsers.OPERA:
         return webdriver.Opera(executable_path=OperaDriverManager().install())
     else:
-        return webdriver.Firefox(executable_path=GeckoDriverManager().install())
+        return webdriver.Firefox(
+            executable_path=GeckoDriverManager().install())
