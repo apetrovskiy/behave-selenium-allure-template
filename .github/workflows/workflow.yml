@@ -41,7 +41,7 @@ jobs:
       - uses: ./.github/actions/allure-upload
         if: always()
         with:
-          folder-name: allure-results          
+          folder-name: allure-results   
 
   allure:
     runs-on: ubuntu-latest
