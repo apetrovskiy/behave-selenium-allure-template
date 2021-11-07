@@ -1,0 +1,10 @@
+name: Show Allure files
+description: Allure installation and folders
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        pwd
+        ls allure-results
+        # allure --version
+      shell: bash

@@ -39,7 +39,10 @@ jobs:
       # - uses: ./.github/actions/allure-upload
       #   if: always()
       #   with:
-      #     folder-name: allure-results   
+      #     folder-name: allure-results
+      - name: Look at Allure
+        if: always()
+        uses: ./.github/actions/allure-show
       - name: Archive Allure results
         if: always()
         uses: actions/upload-artifact@v2
