@@ -21,9 +21,12 @@ jobs:
         pip install pipenv
         pipenv sync
         # pip install pylint
-    - name: Analysing the code with pylint
+#     - name: Analysing the code with pylint
+#       run: |
+#         pylint `ls -R|grep .py$|xargs`
+    - name: Lint with flake8
       run: |
-        pylint `ls -R|grep .py$|xargs`
+        pipenv run flake8 ./src
     - name: Test
       run: |
         pipenv run behave
