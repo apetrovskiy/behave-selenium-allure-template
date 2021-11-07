@@ -30,6 +30,10 @@ jobs:
         if: always()
         run: |
           pipenv run flake8 ./src
+      - name: pycodestyle
+        if: always()
+        run: |
+          pipenv run pycodestyle .
       - name: Test
         if: always()
         run: |
