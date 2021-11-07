@@ -10,6 +10,7 @@ configparser = "*"
 autopep8 = "*"
 webdriver-manager = "*"
 pylint = "*"
+allure-behave = "*"
 
 [dev-packages]
 pycodestyle = "*"
