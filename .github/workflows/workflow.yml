@@ -36,7 +36,7 @@ jobs:
     - name: Test
       if: always()
       run: |
-        pipenv run behave -f allure_behave.formatter:AllureFormatter -o allure-results ./src/features --no-capture --no-capture-stderr
+        pipenv run behave -f allure_behave.formatter:AllureFormatter -o report/allure-results ./src/features --no-capture --no-capture-stderr
     - uses: ./.github/actions/allure-upload
       if: always()
       with:
