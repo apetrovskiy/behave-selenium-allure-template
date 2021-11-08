@@ -6,6 +6,6 @@ runs:
     - run: |
         pwd
         ls
-        ls allure-results
+        ls report/allure-results
         # allure --version
       shell: bash

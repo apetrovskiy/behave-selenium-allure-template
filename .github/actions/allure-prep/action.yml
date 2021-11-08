@@ -7,7 +7,7 @@ runs:
         sudo apt-get update
         sudo apt-get install allure --fix-missing
         mkdir report
-        mkdir allure-results
-        mkdir allure-report
-        mkdir allure-history
+        mkdir report/allure-results
+        mkdir report/allure-report
+        mkdir report/allure-history
       shell: bash
