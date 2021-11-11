@@ -37,6 +37,16 @@ jobs:
       if: always()
       run: |
         pipenv run behave -f allure_behave.formatter:AllureFormatter -o report/allure-results ./src/features --no-capture --no-capture-stderr
+        
+    - name: Show results
+      if: always()
+      run: |
+        echo "==== root ===="
+        pwd
+        ls
+        echo "==== allure-results ===="
+        ls allure-results
+        
     - uses: ./.github/actions/allure-upload
       if: always()
       with:
