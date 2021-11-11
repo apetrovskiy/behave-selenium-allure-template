@@ -41,6 +41,14 @@ jobs:
       if: always()
       with:
         folder-name: allure-results
+    
+    - name: Env file
+      if: always()
+      run: |
+        #
+        echo "aaaa=bbbb" > allure-results/environment.properties
+        echo "ccc=ddd" >> allure-results/environment.properties
+        #
 
     - name: Look at Allure
       if: always()
@@ -70,7 +78,7 @@ jobs:
           path: gh-pages
 
       - name: Allure Report with history
-        uses: simple-elf/allure-report-action@v1.5
+        uses: simple-elf/allure-report-action@master
         if: always()
 
       - name: Allure Report action from marketplace
